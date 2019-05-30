@@ -8,6 +8,21 @@ import javax.swing.filechooser.*;
 public class JFTableroPersonalizado extends javax.swing.JFrame {
 
     private File rutaImagen;
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton jbAceptar;
+    private javax.swing.JButton jbCancelar;
+    private javax.swing.JButton jbCargarImagen;
+    private javax.swing.JLabel jlDimension;
+    private javax.swing.JLabel jlSeleccionarImagen;
+    private javax.swing.JPanel jpContenido;
+    private javax.swing.JPanel jpDimension;
+    private javax.swing.JPanel jpSeleccionarImagen;
+    private javax.swing.JSpinner jsDimension;
+    private javax.swing.JTextField jtfRuta;
+    // End of variables declaration//GEN-END:variables
     
     public JFTableroPersonalizado() {
         super("Nuevo Tablero Personalizado");
@@ -18,150 +33,150 @@ public class JFTableroPersonalizado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JPcontenido = new javax.swing.JPanel();
-        JLdimension = new javax.swing.JLabel();
-        JPdimension = new javax.swing.JPanel();
+        jpContenido = new javax.swing.JPanel();
+        jlDimension = new javax.swing.JLabel();
+        jpDimension = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        JSdimension = new javax.swing.JSpinner();
-        JBaceptar = new javax.swing.JButton();
-        JBcancelar = new javax.swing.JButton();
-        JPseleccionarImagen = new javax.swing.JPanel();
+        jsDimension = new javax.swing.JSpinner();
+        jbAceptar = new javax.swing.JButton();
+        jbCancelar = new javax.swing.JButton();
+        jpSeleccionarImagen = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        JTFruta = new javax.swing.JTextField();
-        JBcargarImagen = new javax.swing.JButton();
-        JLseleccionarImagen = new javax.swing.JLabel();
+        jtfRuta = new javax.swing.JTextField();
+        jbCargarImagen = new javax.swing.JButton();
+        jlSeleccionarImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        JPcontenido.setPreferredSize(new java.awt.Dimension(500, 314));
+        jpContenido.setPreferredSize(new java.awt.Dimension(500, 314));
 
-        JLdimension.setText("Dimensión del juego (Filas, Columnas)");
+        jlDimension.setText("Dimensión del juego (Filas, Columnas)");
 
-        JPdimension.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(18, 30, 49)));
+        jpDimension.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(18, 30, 49)));
 
         jLabel9.setText("Dimensión:");
 
-        JSdimension.setModel(new javax.swing.SpinnerNumberModel(3, 3, 10, 1));
-        JSdimension.setEditor(new javax.swing.JSpinner.NumberEditor(JSdimension, ""));
+        jsDimension.setModel(new javax.swing.SpinnerNumberModel(3, 3, 10, 1));
+        jsDimension.setEditor(new javax.swing.JSpinner.NumberEditor(jsDimension, ""));
 
-        javax.swing.GroupLayout JPdimensionLayout = new javax.swing.GroupLayout(JPdimension);
-        JPdimension.setLayout(JPdimensionLayout);
-        JPdimensionLayout.setHorizontalGroup(
-            JPdimensionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPdimensionLayout.createSequentialGroup()
+        javax.swing.GroupLayout jpDimensionLayout = new javax.swing.GroupLayout(jpDimension);
+        jpDimension.setLayout(jpDimensionLayout);
+        jpDimensionLayout.setHorizontalGroup(
+            jpDimensionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpDimensionLayout.createSequentialGroup()
                 .addGap(147, 147, 147)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JSdimension, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jsDimension, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(147, 147, 147))
         );
-        JPdimensionLayout.setVerticalGroup(
-            JPdimensionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPdimensionLayout.createSequentialGroup()
+        jpDimensionLayout.setVerticalGroup(
+            jpDimensionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpDimensionLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(JPdimensionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jpDimensionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(JSdimension, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jsDimension, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10))
         );
 
-        JBaceptar.setText("Aceptar");
-        JBaceptar.setEnabled(false);
-        JBaceptar.addActionListener(new java.awt.event.ActionListener() {
+        jbAceptar.setText("Aceptar");
+        jbAceptar.setEnabled(false);
+        jbAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBaceptarActionPerformed(evt);
+                jbAceptarActionPerformed(evt);
             }
         });
 
-        JBcancelar.setText("Cancelar");
-        JBcancelar.addActionListener(new java.awt.event.ActionListener() {
+        jbCancelar.setText("Cancelar");
+        jbCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBcancelarActionPerformed(evt);
+                jbCancelarActionPerformed(evt);
             }
         });
 
-        JPseleccionarImagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(18, 30, 49)));
+        jpSeleccionarImagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(18, 30, 49)));
 
         jLabel2.setText("Ruta:");
 
-        JTFruta.setEditable(false);
+        jtfRuta.setEditable(false);
 
-        JBcargarImagen.setText("Cargar");
-        JBcargarImagen.addActionListener(new java.awt.event.ActionListener() {
+        jbCargarImagen.setText("Cargar");
+        jbCargarImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBcargarImagenActionPerformed(evt);
+                jbCargarImagenActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout JPseleccionarImagenLayout = new javax.swing.GroupLayout(JPseleccionarImagen);
-        JPseleccionarImagen.setLayout(JPseleccionarImagenLayout);
-        JPseleccionarImagenLayout.setHorizontalGroup(
-            JPseleccionarImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPseleccionarImagenLayout.createSequentialGroup()
+        javax.swing.GroupLayout jpSeleccionarImagenLayout = new javax.swing.GroupLayout(jpSeleccionarImagen);
+        jpSeleccionarImagen.setLayout(jpSeleccionarImagenLayout);
+        jpSeleccionarImagenLayout.setHorizontalGroup(
+            jpSeleccionarImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpSeleccionarImagenLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jLabel2)
                 .addGap(5, 5, 5)
-                .addComponent(JTFruta, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtfRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
-                .addComponent(JBcargarImagen)
+                .addComponent(jbCargarImagen)
                 .addGap(10, 10, 10))
         );
-        JPseleccionarImagenLayout.setVerticalGroup(
-            JPseleccionarImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPseleccionarImagenLayout.createSequentialGroup()
+        jpSeleccionarImagenLayout.setVerticalGroup(
+            jpSeleccionarImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpSeleccionarImagenLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(JPseleccionarImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jpSeleccionarImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(JTFruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBcargarImagen))
+                    .addComponent(jtfRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbCargarImagen))
                 .addGap(26, 26, 26))
         );
 
-        JLseleccionarImagen.setText("Seleccionar una imagen");
+        jlSeleccionarImagen.setText("Seleccionar una imagen");
 
-        javax.swing.GroupLayout JPcontenidoLayout = new javax.swing.GroupLayout(JPcontenido);
-        JPcontenido.setLayout(JPcontenidoLayout);
-        JPcontenidoLayout.setHorizontalGroup(
-            JPcontenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPcontenidoLayout.createSequentialGroup()
-                .addGroup(JPcontenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPcontenidoLayout.createSequentialGroup()
-                        .addGroup(JPcontenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JPcontenidoLayout.createSequentialGroup()
+        javax.swing.GroupLayout jpContenidoLayout = new javax.swing.GroupLayout(jpContenido);
+        jpContenido.setLayout(jpContenidoLayout);
+        jpContenidoLayout.setHorizontalGroup(
+            jpContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpContenidoLayout.createSequentialGroup()
+                .addGroup(jpContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpContenidoLayout.createSequentialGroup()
+                        .addGroup(jpContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpContenidoLayout.createSequentialGroup()
                                 .addGap(110, 110, 110)
-                                .addComponent(JLdimension))
-                            .addGroup(JPcontenidoLayout.createSequentialGroup()
+                                .addComponent(jlDimension))
+                            .addGroup(jpContenidoLayout.createSequentialGroup()
                                 .addGap(30, 30, 30)
-                                .addGroup(JPcontenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(JPcontenidoLayout.createSequentialGroup()
-                                        .addComponent(JBaceptar)
+                                .addGroup(jpContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jpContenidoLayout.createSequentialGroup()
+                                        .addComponent(jbAceptar)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(JBcancelar))
-                                    .addComponent(JPdimension, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(JPseleccionarImagen, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addComponent(jbCancelar))
+                                    .addComponent(jpDimension, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jpSeleccionarImagen, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(30, 30, 30))
-                    .addGroup(JPcontenidoLayout.createSequentialGroup()
+                    .addGroup(jpContenidoLayout.createSequentialGroup()
                         .addGap(150, 150, 150)
-                        .addComponent(JLseleccionarImagen)
+                        .addComponent(jlSeleccionarImagen)
                         .addGap(150, 150, 150)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        JPcontenidoLayout.setVerticalGroup(
-            JPcontenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPcontenidoLayout.createSequentialGroup()
+        jpContenidoLayout.setVerticalGroup(
+            jpContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpContenidoLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(JLdimension)
+                .addComponent(jlDimension)
                 .addGap(18, 18, 18)
-                .addComponent(JPdimension, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jpDimension, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addComponent(JLseleccionarImagen)
+                .addComponent(jlSeleccionarImagen)
                 .addGap(20, 20, 20)
-                .addComponent(JPseleccionarImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jpSeleccionarImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addGroup(JPcontenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBcancelar)
-                    .addComponent(JBaceptar))
+                .addGroup(jpContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbCancelar)
+                    .addComponent(jbAceptar))
                 .addGap(30, 30, 30))
         );
 
@@ -169,47 +184,32 @@ public class JFTableroPersonalizado extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPcontenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPcontenido, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+            .addComponent(jpContenido, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void JBcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBcancelarActionPerformed
+    private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
         setVisible(false);
-    }//GEN-LAST:event_JBcancelarActionPerformed
+    }//GEN-LAST:event_jbCancelarActionPerformed
 
-    private void JBaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBaceptarActionPerformed
-        Control.iniciarTableroPersonalizado(this, (int) JSdimension.getValue(), new File(JTFruta.getText()));
-    }//GEN-LAST:event_JBaceptarActionPerformed
+    private void jbAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAceptarActionPerformed
+        Control.iniciarTableroPersonalizado(this, (int) jsDimension.getValue(), new File(jtfRuta.getText()));
+    }//GEN-LAST:event_jbAceptarActionPerformed
 
-    private void JBcargarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBcargarImagenActionPerformed
+    private void jbCargarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCargarImagenActionPerformed
         JFileChooser JFC = new JFileChooser();
         JFC.addChoosableFileFilter(new FileNameExtensionFilter("JPEG & PNG file", "jpg", "jpeg", "JPG", "JPEG", "png", "PNG"));
         if (JFC.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             rutaImagen = JFC.getSelectedFile();
-            JTFruta.setText(rutaImagen.getAbsolutePath());
+            jtfRuta.setText(rutaImagen.getAbsolutePath());
             //ControlJuego.setRutaImagen(rutaImagen.getAbsolutePath());
-            JBaceptar.setEnabled(true);
+            jbAceptar.setEnabled(true);
         }
-    }//GEN-LAST:event_JBcargarImagenActionPerformed
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBaceptar;
-    private javax.swing.JButton JBcancelar;
-    private javax.swing.JButton JBcargarImagen;
-    private javax.swing.JLabel JLdimension;
-    private javax.swing.JLabel JLseleccionarImagen;
-    private javax.swing.JPanel JPcontenido;
-    private javax.swing.JPanel JPdimension;
-    private javax.swing.JPanel JPseleccionarImagen;
-    private javax.swing.JSpinner JSdimension;
-    private javax.swing.JTextField JTFruta;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel9;
-    // End of variables declaration//GEN-END:variables
+    }//GEN-LAST:event_jbCargarImagenActionPerformed
 }

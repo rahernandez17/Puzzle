@@ -24,17 +24,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="JPcontenido" alignment="0" max="32767" attributes="0"/>
+          <Component id="jpContenido" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="JPcontenido" alignment="0" pref="344" max="32767" attributes="0"/>
+          <Component id="jpContenido" alignment="0" pref="344" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="JPcontenido">
+    <Container class="javax.swing.JPanel" name="jpContenido">
       <Properties>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[500, 314]"/>
@@ -50,18 +50,18 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-                                  <Component id="JLdimension" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlDimension" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="JBaceptar" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jbAceptar" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="JBcancelar" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jbCancelar" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="JPdimension" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="JPseleccionarImagen" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jpDimension" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jpSeleccionarImagen" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -69,7 +69,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="JLseleccionarImagen" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlSeleccionarImagen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -81,17 +81,17 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="JLdimension" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlDimension" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="JPdimension" min="-2" max="-2" attributes="0"/>
+                  <Component id="jpDimension" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="JLseleccionarImagen" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlSeleccionarImagen" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="JPseleccionarImagen" min="-2" max="-2" attributes="0"/>
+                  <Component id="jpSeleccionarImagen" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="JBcancelar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JBaceptar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbAceptar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
@@ -99,12 +99,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="JLdimension">
+        <Component class="javax.swing.JLabel" name="jlDimension">
           <Properties>
             <Property name="text" type="java.lang.String" value="Dimensi&#xf3;n del juego (Filas, Columnas)"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JPanel" name="JPdimension">
+        <Container class="javax.swing.JPanel" name="jpDimension">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -122,7 +122,7 @@
                       <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="JSdimension" min="-2" pref="59" max="-2" attributes="0"/>
+                      <Component id="jsDimension" min="-2" pref="59" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -133,7 +133,7 @@
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="JSdimension" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jsDimension" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
@@ -146,7 +146,7 @@
                 <Property name="text" type="java.lang.String" value="Dimensi&#xf3;n:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JSpinner" name="JSdimension">
+            <Component class="javax.swing.JSpinner" name="jsDimension">
               <Properties>
                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                   <SpinnerModel initial="3" maximum="10" minimum="3" numberType="java.lang.Integer" stepSize="1" type="number"/>
@@ -158,24 +158,24 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="JBaceptar">
+        <Component class="javax.swing.JButton" name="jbAceptar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Aceptar"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBaceptarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAceptarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="JBcancelar">
+        <Component class="javax.swing.JButton" name="jbCancelar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBcancelarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbCancelarActionPerformed"/>
           </Events>
         </Component>
-        <Container class="javax.swing.JPanel" name="JPseleccionarImagen">
+        <Container class="javax.swing.JPanel" name="jpSeleccionarImagen">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -193,9 +193,9 @@
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="JTFruta" min="-2" pref="270" max="-2" attributes="0"/>
+                      <Component id="jtfRuta" min="-2" pref="270" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="JBcargarImagen" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbCargarImagen" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -206,8 +206,8 @@
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="JTFruta" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="JBcargarImagen" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtfRuta" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbCargarImagen" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
@@ -220,22 +220,22 @@
                 <Property name="text" type="java.lang.String" value="Ruta:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="JTFruta">
+            <Component class="javax.swing.JTextField" name="jtfRuta">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="JBcargarImagen">
+            <Component class="javax.swing.JButton" name="jbCargarImagen">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cargar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBcargarImagenActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbCargarImagenActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="JLseleccionarImagen">
+        <Component class="javax.swing.JLabel" name="jlSeleccionarImagen">
           <Properties>
             <Property name="text" type="java.lang.String" value="Seleccionar una imagen"/>
           </Properties>
