@@ -1,21 +1,41 @@
 package control;
 
-import java.awt.*;
-import javax.swing.*;
-import java.io.*;
-import modelos.*;
-import vistas.*;
-import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.GridLayout;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
+import java.awt.event.ActionEvent;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.NoSuchElementException;
 import java.util.Random;
+import java.util.logging.Level;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.Timer;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
+import modelos.Pieza;
+import vistas.JFEstadisticas;
+import vistas.JFPuzzle;
+import vistas.JFTableroImagen;
+import vistas.JFTableroNumeros;
+import vistas.JFTableroPersonalizado;
 
 public abstract class Control {
 
-    private static final int WIDTH = 600, HEIGHT = 600;
+    private static final int WIDTH = 600;
+    private static final int HEIGHT = 600;
 
     private static Timer t;
     private static BufferedImage imagen = null;
@@ -36,12 +56,16 @@ public abstract class Control {
     private static int movimientos = 0;
     private static int dimensionPartida = 3;
 
+    private Control() {
+
+    }
+
     //Método que inicia los componentes
     public static void initComponents() {
         try {
-            javax.swing.UIManager.setLookAndFeel("com.bulenkov.darcula.DarculaLaf");
+            UIManager.setLookAndFeel("com.bulenkov.darcula.DarculaLaf");
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
-            System.out.println(ex.getMessage());
+            java.util.logging.Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
         }
         ventanaPuzzle = new JFPuzzle();
         ventanaPuzzle.setVisible(true);
@@ -58,7 +82,7 @@ public abstract class Control {
     }
 
     //Método que simula el contador de tiempo del juego
-    public static void iniciarTiempoDeJuego(JTextField JTFtiempo) {
+    public static void iniciarTiempoDeJuego(JTextField jtfTiempo) {
         if (t != null) {
             t.stop();
         }
@@ -67,7 +91,7 @@ public abstract class Control {
             tiempoDeJuego[i] = 0;
         }
         t = new Timer(1000, (ActionEvent evt) -> {
-            JTFtiempo.setText(tiempoDeJuego[0] + ":" + tiempoDeJuego[1] + ":" + tiempoDeJuego[2]);
+            jtfTiempo.setText(tiempoDeJuego[0] + ":" + tiempoDeJuego[1] + ":" + tiempoDeJuego[2]);
             tiempoDeJuego[2]++;
             if (tiempoDeJuego[2] > 59) {
                 tiempoDeJuego[2] = 0;
@@ -124,7 +148,8 @@ public abstract class Control {
 
     //Método para generar la matriz de Piezas con números
     private static Pieza[][] generarTableroConNumeros(int dimension, Color colorPieza, Color colorTexto) {
-        Pieza[] piezas = new Pieza[dimension * dimension], piezasParaTablero = new Pieza[dimension * dimension];
+        Pieza[] piezas = new Pieza[dimension * dimension];
+        Pieza[] piezasParaTablero = new Pieza[dimension * dimension];
         int k = 0;
         //Parte de instanciar nuevos Piezas en un Array
         for (int i = 0; i < piezas.length; i++) {
@@ -156,7 +181,7 @@ public abstract class Control {
             repaint();
             iniciarTiempoDeJuego(ventanaPuzzle.getJTFtiempo());
         } catch (IOException | NullPointerException ex) {
-            System.out.println(ex.getMessage());
+            java.util.logging.Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -175,10 +200,8 @@ public abstract class Control {
             colorBgTexto = colorTexto;
             repaint();
             iniciarTiempoDeJuego(ventanaPuzzle.getJTFtiempo());
-        } catch (IOException ioe) {
-            System.out.println("La imagen no se pudo abrir!");
-        } catch (NullPointerException npe) {
-            System.out.println("No se pudo iniciar el programa debido a que no existe una imagen cargada");
+        } catch (IOException | NullPointerException ex) {
+            java.util.logging.Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -365,7 +388,6 @@ public abstract class Control {
                         JOptionPane.showMessageDialog(null, "Error: " + ex);
                     }
                 } while (repetir);
-                System.out.println("No repite");
             }
         }.start();
     }
@@ -395,8 +417,7 @@ public abstract class Control {
 
     //Método para guardar las estadísticas generando un archivo con extensión .cfg
     public static void guardarEstadisticas() {
-        try {
-            PrintWriter archivoEstadisticas = new PrintWriter(new FileWriter("src/data/estadisticas.cfg"));
+        try (PrintWriter archivoEstadisticas = new PrintWriter(new FileWriter("src/data/estadisticas.cfg"))) {
             archivoEstadisticas.println(partidasJugadas);//Partidas Jugadas
             archivoEstadisticas.println(partidasGanadas);//Partidas Ganadas            
             archivoEstadisticas.println(calcularTiempoTotal()); //Tiempo jugado
@@ -414,9 +435,8 @@ public abstract class Control {
                     archivoEstadisticas.print("-"); //Modalidad favorita
                 }
             }
-            archivoEstadisticas.close();//Cerramos el archivo
-        } catch (IOException ioe) {
-            System.out.println(ioe.getMessage());
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -443,8 +463,7 @@ public abstract class Control {
 
 //Método para guardar la partida si no se ha ganado el juego
     public static void guardarPartida() {
-        try {
-            PrintWriter archivoEstadisticas = new PrintWriter(new FileWriter("src/data/partida.cfg"));
+        try (PrintWriter archivoEstadisticas = new PrintWriter(new FileWriter("src/data/partida.cfg"))) {
             archivoEstadisticas.println(juegoEnProgreso);//Si hay un juego en progreso, guardará el tablero
             if (juegoEnProgreso) {
                 int k = 0;
@@ -470,18 +489,17 @@ public abstract class Control {
                         break;
                     default:
                         archivoEstadisticas.println(rutaImagenPartida);//Ruta imagen
-                }
+                    }
             }
-            archivoEstadisticas.close();//Cerramos el archivo
-        } catch (IOException | NullPointerException e) {
-            System.out.println(e.getMessage());
+
+        } catch (IOException | NullPointerException ex) {
+            java.util.logging.Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     //Método para cargar la partida si existe una en progreso
     public static void leerPartida() throws FileNotFoundException {
-        try {
-            BufferedReader archivoPartida = new BufferedReader(new FileReader("src/data/partida.cfg"));
+        try (BufferedReader archivoPartida = new BufferedReader(new FileReader("src/data/partida.cfg"))) {
             juegoEnProgreso = Boolean.parseBoolean(archivoPartida.readLine());//Leer si hay una partida en progreso
             if (juegoEnProgreso) {
                 String[] partidaTemp = archivoPartida.readLine().split("-");
@@ -504,10 +522,10 @@ public abstract class Control {
                         pintarTableroConImagen(tablero, dimensionPartida, new File(rutaImagenPartida));
                 }
             }
-            archivoPartida.close();//Cerramos el archivo
-        } catch (IOException | NoSuchElementException | NumberFormatException e) {
+
+        } catch (IOException | NoSuchElementException | NumberFormatException ex) {
             juegoEnProgreso = false;
-            System.out.println(e.getMessage());
+            java.util.logging.Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

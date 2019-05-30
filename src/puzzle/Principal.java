@@ -4,7 +4,10 @@ import vistas.*;
 
 public class Principal {
 
-    //Método principal
+    private Principal() {
+        
+    }
+    
     public static void main(String[] args) {
         new JFSplash().setVisible(true);
     }
