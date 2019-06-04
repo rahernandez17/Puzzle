@@ -1,18 +1,23 @@
 package modelos;
 
-import control.*;
-import java.awt.*;
-import java.awt.event.*;
+import control.Control;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferedImage;
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 public class Pieza {
     
     private int x;
     private int y;
-    private final int ID;
-    private final int WIDTH;
-    private final int HEIGHT;
+    private final int id;
+    private final int width;
+    private final int height;
     private Color colorPieza;
     private Color colorTexto;
     private BufferedImage imagen;
@@ -22,20 +27,20 @@ public class Pieza {
     
     /*Constructores*/
     public Pieza(int id, int x, int  y, int width, int height, BufferedImage imagen) {
-        this.ID = id;
+        this.id = id;
         this.x = x;
         this.y = y;
-        this.WIDTH = width;
-        this.HEIGHT = height;
+        this.width = width;
+        this.height = height;
         this.imagen = imagen;
         initComponent();
         ponerImagen();
     }
     
     public Pieza(int id, int width, int height, Color colorPieza, Color colorTexto) {
-        this.ID = id;
-        this.WIDTH = width;
-        this.HEIGHT = height;
+        this.id = id;
+        this.width = width;
+        this.height = height;
         this.colorPieza = colorPieza;
         this.colorTexto = colorTexto;
         initComponent();
@@ -44,7 +49,7 @@ public class Pieza {
 
     /*Métodos Get*/
     public int getId(){
-        return ID;
+        return id;
     }
     
     public BufferedImage getImagen() {
@@ -63,7 +68,7 @@ public class Pieza {
     private void initComponent(){
         piezaBoton = new JButton();
         piezaBoton.setVisible(true);
-        piezaBoton.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        piezaBoton.setPreferredSize(new Dimension(width, height));
         direccion = "";
         piezaBoton.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
@@ -74,19 +79,19 @@ public class Pieza {
         piezaBoton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent evt) {
-                piezaMouseReleased(evt);
+                piezaMouseReleased();
             }
         });
     }
     
     private void ponerImagen(){
-        if(ID != 0 )
-            piezaBoton.setIcon(new ImageIcon(imagen.getSubimage(x, y, WIDTH, HEIGHT)));
+        if(id != 0 )
+            piezaBoton.setIcon(new ImageIcon(imagen.getSubimage(x, y, width, height)));
     }
     
     private void ponerNumero(){
-        if(ID != 0 ){
-            piezaBoton.setText(String.valueOf(ID));
+        if(id != 0 ){
+            piezaBoton.setText(String.valueOf(id));
             piezaBoton.setFont(new Font("Arial", 0, 20));
             piezaBoton.setBackground(colorPieza);
             piezaBoton.setForeground(colorTexto);
@@ -94,7 +99,7 @@ public class Pieza {
     }
     
     public void imagenMouseDragged(MouseEvent evt){
-        if(ID != 0){
+        if(id != 0){
             if (evt.getX() < 0)
                 direccion = "IZQUIERDA";
             else if(evt.getX() > piezaBoton.getHeight())
@@ -108,8 +113,8 @@ public class Pieza {
         }
     }
     
-    public void piezaMouseReleased(MouseEvent evt){
-        Control.moverPieza(ID);
+    public void piezaMouseReleased(){
+        Control.moverPieza(id);
     }
     
 }
