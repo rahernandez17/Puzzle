@@ -300,10 +300,10 @@ public abstract class Control {
         ventanaPuzzle.getJPjuego().removeAll();//Primero, borramos todo del panel
         for (int i = 0; i < piezas.length; i++) {
             for (int j = 0; j < piezas[0].length; j++) {
-                ventanaPuzzle.getJPjuego().add(piezas[i][j]);
+                ventanaPuzzle.getJPjuego().add(piezas[i][j].getPiezaBoton());
                 if (piezas[i][j].getId() == 0) //Indicamos que la pieza cero no se hará visible
                 {
-                    piezas[i][j].setVisible(false);
+                    piezas[i][j].getPiezaBoton().setVisible(false);
                 }
             }
         }
